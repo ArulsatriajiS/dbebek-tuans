@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'BEBEK TUANS — Bebek Terbaik di Sembalun, Lombok</title>
+    <meta name="description" content="Nikmati bebek goreng & bakar terbaik di Sembalun dengan pemandangan pegunungan yang menakjubkan. Restoran terbuka dengan cita rasa otentik Lombok.">
+    <meta name="keywords" content="bebek goreng sembalun, restoran lombok, bebek bakar, d'bebek tuans, kuliner sembalun">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#beranda">
+                <span class="brand-icon">🦆</span>
+                <span class="brand-text">D'BEBEK TUANS</span>
+            </a>
+
+            <!-- Right-side controls (always visible) -->
+            <div class="d-flex align-items-center gap-2 order-lg-2">
+                <!-- Language Toggle -->
+                <button class="btn btn-sm btn-outline-nav" id="langToggle" title="Switch Language" aria-label="Toggle language">
+                    <span id="langLabel">EN</span>
+                </button>
+
+                <!-- Dark/Light Mode Toggle -->
+                <button class="btn btn-sm btn-outline-nav" id="themeToggle" title="Toggle Dark Mode" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                </button>
+
+                <!-- Hamburger Toggler -->
+                <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <div class="collapse navbar-collapse order-lg-1" id="desktopNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item"><a class="nav-link" href="#beranda" data-i18n="nav.home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang" data-i18n="nav.about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu" data-i18n="nav.menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri" data-i18n="nav.gallery">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak" data-i18n="nav.contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ OFFCANVAS MOBILE MENU ============ -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileMenuLabel">
+                <span class="brand-icon">🦆</span> D'BEBEK TUANS
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link mobile-link" href="#beranda" data-i18n="nav.home">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link mobile-link" href="#tentang" data-i18n="nav.about">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link mobile-link" href="#menu" data-i18n="nav.menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link mobile-link" href="#galeri" data-i18n="nav.gallery">Galeri</a></li>
+                <li class="nav-item"><a class="nav-link mobile-link" href="#kontak" data-i18n="nav.contact">Kontak</a></li>
+            </ul>
+            <hr>
+            <div class="d-flex flex-column gap-3 mt-3">
+                <a href="https://wa.me/6281234567890" class="btn btn-whatsapp-mobile" target="_blank" rel="noopener">
+                    <i class="bi bi-whatsapp me-2"></i><span data-i18n="cta.whatsapp">Hubungi via WhatsApp</span>
+                </a>
+                <p class="text-muted small mb-0 mt-2">
+                    <i class="bi bi-clock me-1"></i> <span data-i18n="footer.hours">Buka Setiap Hari: 10:00 – 20:00</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero-section" id="beranda">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="container hero-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <span class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+                        <i class="bi bi-geo-alt-fill me-1"></i> <span data-i18n="hero.badge">Sembalun, Lombok</span>
+                    </span>
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200" data-i18n="hero.title">
+                        Nikmati Bebek Terbaik<br>di Sembalun
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="350" data-i18n="hero.subtitle">
+                        Hidangan lezat dengan pemandangan pegunungan yang memukau
+                    </p>
+                    <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="500">
+                        <a href="https://wa.me/6281234567890?text=Halo%20D'Bebek%20Tuans!%20Saya%20ingin%20reservasi." class="btn btn-cta-primary" target="_blank" rel="noopener">
+                            <i class="bi bi-whatsapp me-2"></i><span data-i18n="cta.contact">Hubungi Kami</span>
+                        </a>
+                        <a href="#menu" class="btn btn-cta-secondary">
+                            <i class="bi bi-book me-2"></i><span data-i18n="cta.menu">Lihat Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="800">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ TRUST BANNER ============ -->
+    <section class="trust-banner" data-aos="fade-up">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-item">
+                    <i class="bi bi-star-fill"></i>
+                    <div>
+                        <strong>4.9</strong> <span data-i18n="trust.stars">Bintang di Google</span>
+                    </div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <i class="bi bi-chat-quote-fill"></i>
+                    <div>
+                        <strong>175+</strong> <span data-i18n="trust.reviews">Ulasan</span>
+                    </div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <i class="bi bi-patch-check-fill"></i>
+                    <div>
+                        <span data-i18n="trust.authentic">Cita Rasa Otentik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ TENTANG (ABOUT) SECTION ============ -->
+    <section class="section-about" id="tentang">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image-wrapper">
+                        <img src="/images/makanan1.jpg" alt="Suasana D'Bebek Tuans" class="about-image" loading="lazy">
+                        <div class="about-image-accent"></div>
+                        <div class="about-experience-badge">
+                            <span class="exp-number" data-i18n="about.badge.number">Sejak</span>
+                            <span class="exp-text" data-i18n="about.badge.text">Sembalun</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="section-label" data-i18n="about.label">Tentang Kami</span>
+                    <h2 class="section-title" data-i18n="about.title">Cita Rasa Otentik di Tengah Alam Sembalun</h2>
+                    <p class="section-text" data-i18n="about.text1">
+                        D'Bebek Tuans menghadirkan pengalaman bersantap unik di dataran tinggi Sembalun, Lombok. 
+                        Dengan konsep <em>open-air dining</em>, Anda bisa menikmati hidangan bebek terbaik sambil 
+                        memandang keindahan Gunung Rinjani dan perbukitan hijau yang memukau.
+                    </p>
+                    <p class="section-text" data-i18n="about.text2">
+                        Kami menggunakan resep turun-temurun dengan bumbu rempah khas Lombok yang kaya akan cita rasa. 
+                        Setiap bebek diolah dengan penuh cinta — digoreng garing sempurna atau dibakar dengan arang 
+                        pilihan untuk menghasilkan kelezatan yang tak terlupakan.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="feature-icon"><i class="bi bi-tree"></i></div>
+                            <div>
+                                <strong data-i18n="about.f1.title">Open-Air Dining</strong>
+                                <p data-i18n="about.f1.text">Makan di alam terbuka</p>
+                            </div>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="feature-icon"><i class="bi bi-fire"></i></div>
+                            <div>
+                                <strong data-i18n="about.f2.title">Bumbu Rempah Asli</strong>
+                                <p data-i18n="about.f2.text">Resep turun-temurun</p>
+                            </div>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon"><i class="bi bi-people"></i></div>
+                            <div>
+                                <strong data-i18n="about.f3.title">Ramah Keluarga</strong>
+                                <p data-i18n="about.f3.text">Cocok untuk semua usia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ MENU SECTION ============ -->
+    <section class="section-menu" id="menu">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-label" data-i18n="menu.label">Menu Kami</span>
+                <h2 class="section-title" data-i18n="menu.title">Hidangan Pilihan</h2>
+                <p class="section-subtitle" data-i18n="menu.subtitle">Dibuat dengan bahan segar pilihan dan resep rahasia keluarga</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1: Bebek Goreng -->
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="/images/makanan1.jpg" alt="Bebek Goreng Krispi" class="menu-card-img" loading="lazy">
+                            <span class="menu-badge-popular" data-i18n="menu.badge.popular">⭐ Favorit</span>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Bebek Goreng Krispi</h3>
+                            <p class="menu-card-desc" data-i18n="menu.item1.desc">Bebek goreng renyah sempurna dengan sambal matah dan lalapan segar</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 35.000 – 50.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Bebek Bakar -->
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="/images/makanan2.jpg" alt="Bebek Bakar Madu" class="menu-card-img" loading="lazy">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Bebek Bakar Madu</h3>
+                            <p class="menu-card-desc" data-i18n="menu.item2.desc">Bebek bakar dengan olesan madu dan rempah, aroma smoke yang menggoda</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 40.000 – 55.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Bebek Rica-Rica -->
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="/images/makanan3.jpg" alt="Bebek Rica-Rica" class="menu-card-img" loading="lazy">
+                            <span class="menu-badge-spicy">🌶️ Pedas</span>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Bebek Rica-Rica</h3>
+                            <p class="menu-card-desc" data-i18n="menu.item3.desc">Bebek dengan bumbu rica pedas khas Manado, sensasi pedas nikmat</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 38.000 – 50.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Minuman Segar -->
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="/images/makanan1.jpg" alt="Minuman Segar" class="menu-card-img" loading="lazy">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title" data-i18n="menu.item4.title">Minuman Segar</h3>
+                            <p class="menu-card-desc" data-i18n="menu.item4.desc">Es jeruk, es kelapa muda, dan aneka jus buah tropis segar</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 10.000 – 25.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ GALERI (GALLERY) ============ -->
+    <section class="section-gallery" id="galeri">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-label" data-i18n="gallery.label">Galeri</span>
+                <h2 class="section-title" data-i18n="gallery.title">Momen di D'Bebek Tuans</h2>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item gallery-item-wide">
+                    <img src="/images/gambar1.jpg" alt="Pemandangan restoran" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/makanan1.jpg" alt="Bebek goreng" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/makanan2.jpg" alt="Bebek bakar" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/makanan3.jpg" alt="Bebek rica-rica" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/makanan1.jpg" alt="Minuman segar" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ KONTAK / MAP SECTION ============ -->
+    <section class="section-contact" id="kontak">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-label" data-i18n="contact.label">Kontak</span>
+                <h2 class="section-title" data-i18n="contact.title">Temukan Kami</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="contact-info-card">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                            <div>
+                                <strong data-i18n="contact.address.title">Alamat</strong>
+                                <p>JC9P+63H, Sembalun Bumbung, Kec. Sembalun, Kabupaten Lombok Timur, Nusa Tenggara Bar. 83656</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-clock-fill"></i></div>
+                            <div>
+                                <strong data-i18n="contact.hours.title">Jam Buka</strong>
+                                <p data-i18n="contact.hours.text">Setiap Hari: 10:00 – 20:00 WITA</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-cash-stack"></i></div>
+                            <div>
+                                <strong data-i18n="contact.price.title">Kisaran Harga</strong>
+                                <p>Rp 25.000 – 50.000 <span data-i18n="contact.price.per">per orang</span></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-check-circle-fill"></i></div>
+                            <div>
+                                <strong data-i18n="contact.services.title">Layanan</strong>
+                                <p data-i18n="contact.services.text">Makan di tempat · Ambil di tepi jalan</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%20D'Bebek%20Tuans!" class="btn btn-cta-primary w-100 mt-3" target="_blank" rel="noopener">
+                            <i class="bi bi-whatsapp me-2"></i><span data-i18n="cta.whatsapp">Hubungi via WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.7!2d116.553!3d-8.382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb1e8c1c1c1c1%3A0x1234567890abcdef!2sD&#39;BEBEK%20TUANS!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; border-radius: 16px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lokasi D'Bebek Tuans">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="brand-icon">🦆</span>
+                        <span class="brand-text">D'BEBEK TUANS</span>
+                    </div>
+                    <p class="footer-desc" data-i18n="footer.desc">Restoran bebek terbaik di dataran tinggi Sembalun, Lombok. Nikmati hidangan lezat dengan pemandangan alam yang menakjubkan.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading" data-i18n="footer.quicklinks">Tautan Cepat</h5>
+                    <ul class="footer-links">
+                        <li><a href="#beranda" data-i18n="nav.home">Beranda</a></li>
+                        <li><a href="#tentang" data-i18n="nav.about">Tentang</a></li>
+                        <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
+                        <li><a href="#galeri" data-i18n="nav.gallery">Galeri</a></li>
+                        <li><a href="#kontak" data-i18n="nav.contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading" data-i18n="footer.info">Informasi</h5>
+                    <div class="footer-info">
+                        <p><i class="bi bi-geo-alt me-2"></i>Sembalun Bumbung, Lombok Timur</p>
+                        <p><i class="bi bi-clock me-2"></i><span data-i18n="footer.hours">Buka Setiap Hari: 10:00 – 20:00</span></p>
+                        <p><i class="bi bi-telephone me-2"></i>+62 812-3456-7890</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <p>&copy; 2026 D'BEBEK TUANS. <span data-i18n="footer.rights">Hak Cipta Dilindungi.</span></p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============ FLOATING WHATSAPP BUTTON ============ -->
+    <a href="https://wa.me/6281234567890?text=Halo%20D'Bebek%20Tuans!" 
+       class="floating-whatsapp" 
+       target="_blank" 
+       rel="noopener" 
+       id="floatingWA"
+       aria-label="Chat via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+        <span class="wa-pulse"></span>
+    </a>
+
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
