@@ -91,6 +91,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--navbar-height);
+    /* Mencegah layar bergeser ke samping di HP */
+    overflow-x: hidden; 
 }
 
 body {
@@ -98,7 +100,9 @@ body {
     background-color: var(--bg-body);
     color: var(--text-primary);
     line-height: 1.7;
+    /* Mencegah elemen keluar batas layar penyebab ruang kosong */
     overflow-x: hidden;
+    width: 100%;
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
@@ -141,8 +145,18 @@ a:hover {
 }
 
 #mainNavbar.scrolled {
-    padding: 6px 0;
-    box-shadow: var(--shadow-md);
+    /* Transparan sebagian dengan efek blur agar elegan */
+    background: rgba(253, 248, 240, 0.7); 
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom-color: transparent;
+    /* Padding tidak dirubah agar ukurannya tetap tidak mengecil */
+}
+
+/* Transparansi sebagian saat mode gelap (Dark Mode) */
+[data-bs-theme="dark"] #mainNavbar.scrolled {
+    background: rgba(18, 18, 18, 0.75); 
 }
 
 .brand-icon {
@@ -446,39 +460,6 @@ a:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
 }
-
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-}
-
-.scroll-mouse {
-    width: 26px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 14px;
-    display: flex;
-    justify-content: center;
-    padding-top: 8px;
-}
-
-.scroll-wheel {
-    width: 4px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
-    animation: scroll-anim 1.8s ease-in-out infinite;
-}
-
-@keyframes scroll-anim {
-    0% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(14px); }
-}
-
 
 /* ======================== TRUST BANNER ======================== */
 .trust-banner {
@@ -1108,6 +1089,11 @@ a:hover {
         font-size: 1.4rem;
         bottom: 20px;
         right: 20px;
+    }
+    
+    /* Perbaikan tambahan agar sisi kotak gambar tidak keluar layar HP */
+    .about-image-accent {
+        right: 0px;
     }
 }
 
